@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permission Check</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container">
+    <h1 class="mt-5">Permission Check</h1>
+    <div class="alert alert-info mt-3">
+        {% if can_access %}
+            <p>You have access to the restricted page.</p>
+            <a href="{% url 'restricted_page' %}" class="btn btn-primary">Go to Restricted Page</a>
+        {% else %}
+            <p>You do not have access to the restricted page.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
